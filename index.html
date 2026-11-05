@@ -164,6 +164,8 @@ section { padding-block:clamp(64px, 9vw, 112px); }
 .bundle .price small { font-size:15px; color:var(--muted); font-weight:600; margin-left:6px; text-decoration:line-through; }
 .stories { background:var(--paper); }
 .stories .products { grid-template-columns:repeat(2, 1fr); max-width:940px; margin-left:auto; margin-right:auto; }
+.stories .bundle { max-width:940px; margin-left:auto; margin-right:auto; }
+.stories .bundle img { height:auto; align-self:center; }
 .lvw { background:#5B7FA6; } .lvx { background:#694B8D; }
 @media (max-width:960px) { .stories .products { grid-template-columns:1fr; max-width:460px; } }
 @media (max-width:960px) { .products { grid-template-columns:1fr; max-width:460px; } .bundle { grid-template-columns:1fr; } }
@@ -230,14 +232,14 @@ footer small { color:var(--muted); font-size:14px; flex-basis:100%; }
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Rainy Day Friends home"><img src="assets/rainy-day-friends-logo.png" alt="Rainy Day Friends" width="1386" height="297"></a>
     <nav class="nav" aria-label="Main">
-      <a href="#friends">The friends</a>
-      <a href="#try">Try a page</a>
       <a href="#stories">Bedtime stories</a>
       <a href="#christmas">Christmas</a>
-      <a href="#books">Coloring books</a>
+      <a href="#friends">The friends</a>
+      <a href="#try">Try a page</a>
+      <a href="#books">Halloween</a>
       <a href="#about">About</a>
     </nav>
-    <a class="btn btn-small" href="#books">Shop</a>
+    <a class="btn btn-small" href="#stories">Shop</a>
   </div>
 </header>
 
@@ -246,19 +248,85 @@ footer small { color:var(--muted); font-size:14px; flex-basis:100%; }
     <div class="wrap">
       <div>
         <p class="eyebrow">Made in rainy Iceland</p>
-        <h1>Cozy coloring for rainy days</h1>
-        <p class="lead">Printable coloring books starring Puddle the bear, Pip the cat and Beezy the bee. Cute, never scary, and made for little hands and big imaginations.</p>
+        <h1>Cozy bedtimes for snowy days</h1>
+        <p class="lead">Gentle bedtime stories, a snowy lullaby and printable coloring pages starring Puddle the bear, Pip the cat, Beezy the bee and Snowy the snowman. Made for little hands and long winter evenings.</p>
         <div class="hero-actions">
-          <a class="btn" href="#books">Shop the coloring books</a>
+          <a class="btn" href="#stories">Shop the Bedtime Boxes</a>
           <a class="btn ghost" href="#try">Color a page now</a>
         </div>
         <ul class="facts">
-          <li>Instant PDF download</li>
+          <li>Instant download</li>
           <li>Print at home, again and again</li>
           <li>Ages 3 and up</li>
         </ul>
       </div>
       <svg class="hero-art" viewBox="0 0 800 720" role="img" aria-label="Puddle the bear, Beezy the bee and Pip the cat under a friendly rain cloud" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTowYWUxNTI0NS01ZTY0LTQ0MjktODhlOS03N2RiMDUxYWE4YTkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaGec8hY9aDtBaZDum40iOUgAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo2YTkzZDdmZS1jOTYzLTQ5ODUtYTI5Ni1lNTkxNWRmMDg1ZmRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoudNpRUkSmcUtBDQGpxmzLQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggWGzDrjgLDaQjjNfVuxWe4tFML746CD3vd3pvJDLHZoikZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaC7pA1HCOg5tesfGW4q/o+4AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCBs5Bag2S3lfidJj3jN7ON6WAmX6Mu22VYA5KriwV/T7mRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjOZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjBhZTE1MjQ1LTVlNjQtNDQyOS04OGU5LTc3ZGIwNTFhYThhOS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmJiNjhhM2QxLWMwNzUtNDI3ZC1iN2NiLTFhNmNmMGIxNzdjMHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCBYbMOuOAsNpCOM19W7FZ7i0UwvvjoIPe93em8kMsdmiKJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggI5imll/7EacG607CobyLdFJ8BvJxD4iWtn86Cw6TJmaiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg0rlpEN4byweNiQUIjpjRUYwPeil3hT8ifjXHFB6FtZN0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQIDvfBuGC8coqUta9/0oQ1IQUfav8PgApGxIkM37FHtbCQhV38ckhsz8XkzZAkzjT6dnQ8buXE5x+8V7kX3y7Tw=</c2pa:manifest></metadata><defs><clipPath id="rainclip"><rect x="480" y="200" width="260" height="260"/></clipPath></defs><defs><radialGradient id="ground" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#D9CCEA"/><stop offset=".55" stop-color="#E6DDF0"/><stop offset="1" stop-color="#E6DDF0" stop-opacity="0"/></radialGradient></defs><ellipse cx="420" cy="646" rx="400" ry="62" fill="url(#ground)"/><ellipse cx="268" cy="636" rx="112" ry="11" fill="#694B8D" opacity=".12"/><ellipse cx="610" cy="636" rx="112" ry="11" fill="#694B8D" opacity=".12"/><g clip-path="url(#rainclip)"><path class="fall" d="M0,-18 C7,-8 12,-2 12,5 A12,12 0 0 1 -12,5 C-12,-2 -7,-8 0,-18 Z" fill="#5B8DB8" stroke="#111" stroke-width="2" style="--x:515px;--d:0.57s;--t:1.97s" transform="translate(515,230) scale(.6)"/><path class="fall" d="M0,-18 C7,-8 12,-2 12,5 A12,12 0 0 1 -12,5 C-12,-2 -7,-8 0,-18 Z" fill="#5B8DB8" stroke="#111" stroke-width="2" style="--x:560px;--d:0.95s;--t:2.01s" transform="translate(560,230) scale(.6)"/><path class="fall" d="M0,-18 C7,-8 12,-2 12,5 A12,12 0 0 1 -12,5 C-12,-2 -7,-8 0,-18 Z" fill="#5B8DB8" stroke="#111" stroke-width="2" style="--x:605px;--d:0.16s;--t:2.18s" transform="translate(605,230) scale(.6)"/><path class="fall" d="M0,-18 C7,-8 12,-2 12,5 A12,12 0 0 1 -12,5 C-12,-2 -7,-8 0,-18 Z" fill="#5B8DB8" stroke="#111" stroke-width="2" style="--x:650px;--d:2.20s;--t:2.46s" transform="translate(650,230) scale(.6)"/><path class="fall" d="M0,-18 C7,-8 12,-2 12,5 A12,12 0 0 1 -12,5 C-12,-2 -7,-8 0,-18 Z" fill="#5B8DB8" stroke="#111" stroke-width="2" style="--x:695px;--d:1.84s;--t:2.06s" transform="translate(695,230) scale(.6)"/></g><g transform="translate(610.0,170.0) scale(1.9,1.9)"><path d="M-60,20 C-86,20 -86,-14 -58,-14 C-58,-44 -16,-50 -6,-26 C4,-52 50,-50 50,-18 C80,-20 86,20 58,20 Z" fill="#FFFFFF" stroke="#111" stroke-width="2.63" stroke-linejoin="round" stroke-linecap="round"/></g><polygon points="110.0,84.0 117.6,99.5 134.7,102.0 122.4,114.0 125.3,131.0 110.0,123.0 94.7,131.0 97.6,114.0 85.3,102.0 102.4,99.5" fill="#F2B233" stroke="#111" stroke-width="3.00" stroke-linejoin="round" stroke-linecap="round"/><polygon points="210.0,185.0 214.4,193.9 224.3,195.4 217.1,202.3 218.8,212.1 210.0,207.5 201.2,212.1 202.9,202.3 195.7,195.4 205.6,193.9" fill="#F2B233" stroke="#111" stroke-width="3.00" stroke-linejoin="round" stroke-linecap="round"/><polygon points="400.0,58.0 403.5,65.1 411.4,66.3 405.7,71.9 407.1,79.7 400.0,76.0 392.9,79.7 394.3,71.9 388.6,66.3 396.5,65.1" fill="#F2B233" stroke="#111" stroke-width="3.00" stroke-linejoin="round" stroke-linecap="round"/><g transform="translate(40,48) scale(1.05)"><g transform="translate(210.0,560.0) scale(1.45,1.45)"><ellipse cx="-26" cy="-8" rx="24" ry="13" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="26" cy="-8" rx="24" ry="13" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><path d="M-50,-12 C-64,-52 -54,-96 -28,-106 L28,-106 C54,-96 64,-52 50,-12 C30,-2 -30,-2 -50,-12 Z" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="0" cy="-48" rx="30" ry="30" fill="#F8E6CF" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="-56" cy="-70" rx="15" ry="24" transform="rotate(20 -56 -70)" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="64" cy="-108" rx="15" ry="26" transform="rotate(35 64 -108)" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/></g><g transform="translate(210.0,342.5) scale(1.45,1.45)"><circle cx="-45.8" cy="-41.5" r="21.9" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><circle cx="45.8" cy="-41.5" r="21.9" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><circle cx="-45.8" cy="-41.5" r="10.3" fill="#F8E6CF" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/><circle cx="45.8" cy="-41.5" r="10.3" fill="#F8E6CF" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="0" cy="0" rx="64" ry="55.7" fill="#E7BE8F" stroke="#111" stroke-width="3.45" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="-39.6" cy="17.1" rx="10.3" ry="6.8" fill="#F7A8B8" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="39.6" cy="17.1" rx="10.3" ry="6.8" fill="#F7A8B8" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="0" cy="20.1" rx="21.3" ry="15.1" fill="#F8E6CF" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/><g transform="translate(-24.80,0.20) scale(1.0)"><ellipse rx="6" ry="8" fill="#111"/><circle cx="-2" cy="-1.6" r="2.4" fill="#fff"/></g><g transform="translate(24.80,0.20) scale(1.0)"><ellipse rx="6" ry="8" fill="#111"/><circle cx="-2" cy="-1.6" r="2.4" fill="#fff"/></g><path d="M-6.60,12.20 C-6.60,10.00 -3.00,10.20 0.00,10.20 C3.00,10.20 6.60,10.00 6.60,12.20 C6.60,16.20 3.60,20.10 0.00,20.10 C-3.60,20.10 -6.60,16.20 -6.60,12.20 Z" fill="#111"/><path d="M0.00,20.10 L0.00,25.40 M-7.20,25.20 Q-3.60,29.60 0.00,25.40 Q3.60,29.60 7.20,25.20" fill="none" stroke="#111" stroke-width="1.86" stroke-linejoin="round" stroke-linecap="round"/></g><g class="float"><g transform="translate(395.0,250.0) scale(1.2,1.2)"><ellipse cx="8" cy="-46" rx="20" ry="30" transform="rotate(-24 8 -46)" fill="#EAF3FB" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="34" cy="-44" rx="18" ry="27" transform="rotate(18 34 -44)" fill="#EAF3FB" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><path d="M72,6 L88,10 L72,16 Z" fill="#3A2E25" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><clipPath id="bzc2"><ellipse cx="30" cy="10" rx="44" ry="34"/></clipPath><ellipse cx="30" cy="10" rx="44" ry="34" fill="#FBE6A0"/><g clip-path="url(#bzc2)" fill="#3A2E25"><rect x="18" y="-30" width="12" height="80"/><rect x="42" y="-30" width="12" height="80"/><rect x="64" y="-30" width="12" height="80"/></g><ellipse cx="30" cy="10" rx="44" ry="34" fill="none" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="14" cy="46" rx="6" ry="4.5" fill="#3A2E25" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="32" cy="46" rx="6" ry="4.5" fill="#3A2E25" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="50" cy="46" rx="6" ry="4.5" fill="#3A2E25" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><path d="M-40,-28 Q-46,-52 -54,-60" fill="none" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><circle cx="-55" cy="-61" r="5" fill="#3A2E25"/><path d="M-22,-30 Q-18,-54 -10,-62" fill="none" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><circle cx="-9" cy="-63" r="5" fill="#3A2E25"/><circle cx="-30" cy="2" r="34" fill="#FBE6A0" stroke="#111" stroke-width="2.90" stroke-linejoin="round" stroke-linecap="round"/><g transform="translate(-44,-2) scale(0.95)"><ellipse rx="6" ry="8" fill="#111"/><circle cx="-2" cy="-2.2" r="2.4" fill="#fff"/><circle cx="2.2" cy="2.8" r="1.1" fill="#fff"/></g><g transform="translate(-18,-2) scale(0.95)"><ellipse rx="6" ry="8" fill="#111"/><circle cx="-2" cy="-2.2" r="2.4" fill="#fff"/><circle cx="2.2" cy="2.8" r="1.1" fill="#fff"/></g><ellipse cx="-50" cy="12" rx="6.5" ry="4.5" fill="#F7A8B8" stroke="#111" stroke-width="1.59"/><ellipse cx="-10" cy="12" rx="6.5" ry="4.5" fill="#F7A8B8" stroke="#111" stroke-width="1.59"/><path d="M-37,12 Q-31,19 -25,12" fill="none" stroke="#111" stroke-width="1.59" stroke-linecap="round"/></g></g><g transform="translate(540.0,560.0) scale(1.3,1.3)"><path d="M44,-10 C96,-8 104,-70 78,-96" fill="none" stroke="#111" stroke-width="29.69" stroke-linecap="round"/><path d="M44,-10 C96,-8 104,-70 78,-96" fill="none" stroke="#D3C8E6" stroke-width="22" stroke-linecap="round"/><path d="M-46,-6 C-60,-50 -48,-94 -24,-104 L24,-104 C48,-94 60,-50 46,-6 C28,4 -28,4 -46,-6 Z" fill="#D3C8E6" stroke="#111" stroke-width="3.85" stroke-linejoin="round" stroke-linecap="round"/><path d="M-14,-96 Q0,-80 14,-96" fill="none" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="-22" cy="-6" rx="18" ry="11" fill="#D3C8E6" stroke="#111" stroke-width="3.85" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="22" cy="-6" rx="18" ry="11" fill="#D3C8E6" stroke="#111" stroke-width="3.85" stroke-linejoin="round" stroke-linecap="round"/><path d="M-26,-12 L-26,-4 M-18,-12 L-18,-4 M18,-12 L18,-4 M26,-12 L26,-4" fill="none" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/></g><g transform="translate(540.0,365.0) scale(1.3,1.3)"><path d="M-56,-18 C-62,-50 -58,-70 -50,-82 C-38,-70 -28,-60 -20,-52 Z" fill="#D3C8E6" stroke="#111" stroke-width="3.85" stroke-linejoin="round" stroke-linecap="round"/><path d="M56,-18 C62,-50 58,-70 50,-82 C38,-70 28,-60 20,-52 Z" fill="#D3C8E6" stroke="#111" stroke-width="3.85" stroke-linejoin="round" stroke-linecap="round"/><path d="M-50,-30 C-52,-50 -50,-60 -46,-68 C-40,-60 -34,-56 -30,-50 Z" fill="#D3C8E6" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/><path d="M50,-30 C52,-50 50,-60 46,-68 C40,-60 34,-56 30,-50 Z" fill="#D3C8E6" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="0" cy="0" rx="62" ry="52" fill="#D3C8E6" stroke="#111" stroke-width="3.85" stroke-linejoin="round" stroke-linecap="round"/><g transform="translate(-24.00,-2.00) scale(0.95)"><ellipse rx="6" ry="8" fill="#111"/><circle cx="-2" cy="-1.6" r="2.4" fill="#fff"/></g><g transform="translate(24.00,-2.00) scale(0.95)"><ellipse rx="6" ry="8" fill="#111"/><circle cx="-2" cy="-1.6" r="2.4" fill="#fff"/></g><ellipse cx="-37.20" cy="13.20" rx="9.50" ry="6.27" fill="#F7A8B8" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/><ellipse cx="37.20" cy="13.20" rx="9.50" ry="6.27" fill="#F7A8B8" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/><path d="M-6.27,9.40 C-6.27,7.31 -2.85,7.50 0.00,7.50 C2.85,7.50 6.27,7.31 6.27,9.40 C6.27,13.20 3.42,16.90 0.00,16.90 C-3.42,16.90 -6.27,13.20 -6.27,9.40 Z" fill="#111"/><path d="M0.00,16.90 L0.00,21.94 M-6.84,21.75 Q-3.42,25.93 0.00,21.94 Q3.42,25.93 6.84,21.75" fill="none" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/><path d="M-44,10 L-72,4 M-44,18 L-72,20 M44,10 L72,4 M44,18 L72,20" fill="none" stroke="#111" stroke-width="2.08" stroke-linejoin="round" stroke-linecap="round"/></g></g><g transform="translate(742.0,668.0) scale(1.4,1.4)"><path d="M0,-22 C8,-11 14,-3 14,6 A14,14 0 0 1 -14,6 C-14,-3 -8,-11 0,-22 Z" fill="#B4A3C9" stroke="#111" stroke-width="2.14" stroke-linejoin="round" stroke-linecap="round"/><path d="M0,10 C-7,5 -7,-1 -3.5,-1 C-1.5,-1 0,1 0,2.5 C0,1 1.5,-1 3.5,-1 C7,-1 7,5 0,10 Z" fill="#fff" stroke="#111" stroke-width="1.71" stroke-linejoin="round" stroke-linecap="round"/></g></svg>
+    </div>
+  </section>
+
+  <section class="stories" id="stories">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Rainy Day Stories · Bedtime Boxes</p>
+        <h2>Bedtime stories to read, hear and color</h2>
+        <p class="lead">Each box is one gentle story: an illustrated storybook to print or read on an iPad, a read-aloud with a soft music-box intro, the lullaby “Softly, Softly Falls the Snow” and 10 coloring pages from the story. Instant download.</p>
+      </div>
+      <div class="products">
+        <article class="product">
+          <img src="assets/box-snowy.webp" alt="Snowy's First Christmas Eve Bedtime Box: storybook, read-aloud, lullaby and coloring pages" width="1000" height="1000" loading="lazy">
+          <div class="product-body">
+            <p class="pill lvx">Bedtime Box · Christmas</p>
+            <h3>Snowy’s First Christmas Eve</h3>
+            <p class="meta">Ages 3–7 · storybook, read-aloud, lullaby &amp; 10 coloring pages</p>
+            <p>Snowy can’t come inside where it’s warm… so his friends bring Christmas out to him.</p>
+            <div class="buy"><span class="price">$9.99</span><a class="btn btn-small payhip-buy-button" data-theme="none" data-product="hRQWU" href="https://payhip.com/b/hRQWU">Buy now</a></div>
+          </div>
+        </article>
+        <article class="product">
+          <img src="assets/box-star.webp" alt="The Star in the Snow winter Bedtime Box: storybook, read-aloud, lullaby and coloring pages" width="1000" height="1000" loading="lazy">
+          <div class="product-body">
+            <p class="pill lvw">Bedtime Box · Winter</p>
+            <h3>The Star in the Snow</h3>
+            <p class="meta">Ages 3–7 · storybook, read-aloud, lullaby &amp; 10 coloring pages</p>
+            <p>The wind blows Beezy’s glowing star into the deep snow… and the friends find a little lost duckling instead.</p>
+            <div class="buy"><span class="price">$9.99</span><a class="btn btn-small payhip-buy-button" data-theme="none" data-product="1JxpT" href="https://payhip.com/b/1JxpT">Buy now</a></div>
+          </div>
+        </article>
+      </div>
+      <article class="bundle">
+        <img src="assets/box-bundle.webp" alt="Winter Bedtime Bundle with both Bedtime Boxes: Snowy's First Christmas Eve and The Star in the Snow" width="1000" height="1000" loading="lazy">
+        <div class="bundle-body">
+          <span class="save">BEST VALUE · SAVE 25%</span>
+          <h3>Winter Bedtime Bundle</h3>
+          <p>Both Bedtime Boxes in one gentle download: a whole winter of cozy bedtimes.</p>
+          <ul>
+            <li>2 illustrated storybooks · print + tablet</li>
+            <li>2 read-aloud stories + the snowy lullaby</li>
+            <li>20 coloring pages · US Letter and A4</li>
+          </ul>
+          <div class="buy"><span class="price">$14.99<small>$19.98</small></span><a class="btn payhip-buy-button" data-theme="none" data-product="Xyznq" href="https://payhip.com/b/Xyznq">Get the bundle</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="christmas">
+    <div class="wrap">
+      <div class="xmas">
+        <div>
+          <p class="eyebrow">Merry Little Colors · the Christmas collection</p>
+          <span class="soon">Coming soon</span>
+          <h2 style="margin-top:14px">Christmas with <span>Snowy</span></h2>
+          <p>Puddle, Pip and Beezy meet a new friend: Snowy the snowman. Cozy Christmas pages for every age, from first words to busy winter villages.</p>
+          <ul>
+            <li>Level 1 · Little Elves · Ages 3–5</li>
+            <li>Level 2 · Merry Kids · Ages 5–8</li>
+            <li>Level 3 · Brave Artists · Ages 8+</li>
+          </ul>
+          <a class="btn sun" href="https://www.pinterest.com/rainyday_friends/" target="_blank" rel="noopener">Follow on Pinterest for the launch</a>
+        </div>
+        <img src="assets/christmas.webp" alt="Merry Little Colors Christmas coloring book cover with Snowy the snowman and sample pages" width="1000" height="900" loading="lazy">
+      </div>
     </div>
   </section>
 
@@ -327,63 +395,14 @@ footer small { color:var(--muted); font-size:14px; flex-basis:100%; }
     </div>
   </section>
 
-  <section class="stories" id="stories">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Rainy Day Stories · Bedtime Boxes</p>
-        <h2>Bedtime stories to read, hear and color</h2>
-        <p class="lead">Each box is one gentle story: an illustrated storybook to print or read on an iPad, a read-aloud with a soft music-box intro, the lullaby “Softly, Softly Falls the Snow” and 10 coloring pages from the story. Instant download.</p>
-      </div>
-      <div class="products">
-        <article class="product">
-          <img src="assets/box-snowy.webp" alt="Snowy's First Christmas Eve Bedtime Box: storybook, read-aloud, lullaby and coloring pages" width="1000" height="1000" loading="lazy">
-          <div class="product-body">
-            <p class="pill lvx">Bedtime Box · Christmas</p>
-            <h3>Snowy’s First Christmas Eve</h3>
-            <p class="meta">Ages 3–7 · storybook, read-aloud, lullaby &amp; 10 coloring pages</p>
-            <p>Snowy can’t come inside where it’s warm… so his friends bring Christmas out to him.</p>
-            <div class="buy"><span class="price">$9.99</span><a class="btn btn-small payhip-buy-button" data-theme="none" data-product="hRQWU" href="https://payhip.com/b/hRQWU">Buy now</a></div>
-          </div>
-        </article>
-        <article class="product">
-          <img src="assets/box-star.webp" alt="The Star in the Snow winter Bedtime Box: storybook, read-aloud, lullaby and coloring pages" width="1000" height="1000" loading="lazy">
-          <div class="product-body">
-            <p class="pill lvw">Bedtime Box · Winter</p>
-            <h3>The Star in the Snow</h3>
-            <p class="meta">Ages 3–7 · storybook, read-aloud, lullaby &amp; 10 coloring pages</p>
-            <p>The wind blows Beezy’s glowing star into the deep snow… and the friends find a little lost duckling instead.</p>
-            <div class="buy"><span class="price">$9.99</span><a class="btn btn-small payhip-buy-button" data-theme="none" data-product="1JxpT" href="https://payhip.com/b/1JxpT">Buy now</a></div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <section id="christmas">
-    <div class="wrap">
-      <div class="xmas">
-        <div>
-          <p class="eyebrow">Merry Little Colors · the Christmas collection</p>
-          <span class="soon">Coming soon</span>
-          <h2 style="margin-top:14px">Christmas with <span>Snowy</span></h2>
-          <p>Puddle, Pip and Beezy meet a new friend: Snowy the snowman. Cozy Christmas pages for every age, from first words to busy winter villages.</p>
-          <ul>
-            <li>Level 1 · Little Elves · Ages 3–5</li>
-            <li>Level 2 · Merry Kids · Ages 5–8</li>
-            <li>Level 3 · Brave Artists · Ages 8+</li>
-          </ul>
-          <a class="btn sun" href="https://www.pinterest.com/rainyday_friends/" target="_blank" rel="noopener">Follow on Pinterest for the launch</a>
-        </div>
-        <img src="assets/christmas.webp" alt="Merry Little Colors Christmas coloring book cover with Snowy the snowman and sample pages" width="1000" height="900" loading="lazy">
-      </div>
-    </div>
-  </section>
+
 
   <section class="night" id="books">
     <div class="moon" aria-hidden="true"></div>
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Spooky Little Colors · the Halloween collection</p>
+        <p class="eyebrow">Spooky Little Colors · the Halloween collection · back every autumn</p>
         <h2>Cute, not scary Halloween</h2>
         <p class="lead">Three levels from toddlers to big kids, 30 pages each. Instant download in US Letter and A4, printable as many times as you like.</p>
       </div>
@@ -472,7 +491,7 @@ footer small { color:var(--muted); font-size:14px; flex-basis:100%; }
         <h2>More cozy things are on the way</h2>
       </div>
       <div class="world">
-        <article><span class="soon">Coming soon</span><h3>Rainy Day Stories</h3><p>Bedtime stories and gentle lullabies with Puddle, Pip and Beezy.</p></article>
+        <article><span class="soon">Out now</span><h3>Rainy Day Stories</h3><p>Bedtime stories and gentle lullabies with Puddle, Pip, Beezy and Snowy. <a href="#stories">See the Bedtime Boxes</a>.</p></article>
         <article><span class="soon">Coming soon</span><h3>Rainy Day Toons</h3><p>Short animated adventures to watch together on a grey afternoon.</p></article>
         <article><span class="soon">Planned</span><h3>Printed books</h3><p>Real hardcover coloring books you can wrap and give as a gift.</p></article>
       </div>
