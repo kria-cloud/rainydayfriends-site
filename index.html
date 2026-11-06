@@ -260,6 +260,24 @@ dialog.peek::backdrop { background:rgba(38,32,58,.72); }
 .peek-dots button { width:9px; height:9px; border-radius:50%; border:0; background:var(--lav-soft); padding:0; cursor:pointer; }
 .peek-dots button[aria-current="true"] { background:var(--plum); }
 @media (max-width:600px) { .peek-in { padding:14px 14px 18px; } .peek-top h3 { font-size:20px; } .peek-stage { height:auto; min-height:46vh; padding:10px 10px 64px; } .peek-nav { top:auto; bottom:10px; transform:none; width:42px; height:42px; } .peek-nav.prev { left:calc(50% - 52px); } .peek-nav.next { right:calc(50% - 52px); } }
+/* lullabies */
+.lull { background:radial-gradient(120% 100% at 80% 0%, #4E3670, #2E2148 55%, #1E1631); color:#fff; border-radius:var(--r-lg); display:grid; grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.1fr); gap:clamp(24px, 4vw, 56px); align-items:center; padding:clamp(24px, 4.5vw, 56px); }
+.lull > img { width:100%; height:auto; border-radius:var(--r-md); box-shadow:0 18px 50px rgba(0,0,0,.35); }
+.lull .eyebrow { color:#CDBDE6; }
+.lull h2 { color:#fff; margin:6px 0 10px; }
+.lull .lead { color:#E3D9F2; margin:0 0 18px; }
+.lull .tracks { display:grid; gap:6px; margin:0 0 22px; }
+.lull .track { background:rgba(255,255,255,.07); border-radius:14px; padding:9px 12px; grid-template-columns:38px 1fr auto; }
+.lull .track button { width:38px; height:38px; background:#fff; color:var(--plum); }
+.lull .track small { display:block; line-height:1.35; margin-top:2px; }
+.lull .track b { color:#fff; } .lull .track small, .lull .track time { color:#CDBDE6; }
+.lull .track .bar { background:rgba(255,255,255,.15); } .lull .track .bar i { background:var(--sun, #F2B233); }
+.lull ul.inc { list-style:none; padding:0; margin:0 0 22px; display:grid; gap:8px; font-weight:700; color:#fff; }
+.lull ul.inc li::before { content:"✓"; color:#F2B233; margin-right:10px; }
+.lull .buy { justify-content:flex-start; gap:18px; flex-wrap:wrap; padding-top:0; }
+.lull .price { color:#fff; }
+.lull .soon { display:inline-block; font:700 12px/1 var(--body); letter-spacing:.14em; text-transform:uppercase; color:var(--plum); background:#fff; padding:9px 13px; border-radius:999px; }
+@media (max-width:860px) { .lull { grid-template-columns:1fr; } .lull > img { max-width:420px; justify-self:center; } }
 </style>
 
 </head>
@@ -272,7 +290,7 @@ dialog.peek::backdrop { background:rgba(38,32,58,.72); }
       <a href="#christmas">Christmas</a>
       <a href="#friends">The friends</a>
       <a href="#try">Try a page</a>
-      <a href="#books">Halloween</a>
+      <a href="#lullabies">Lullabies</a>
       <a href="#about">About</a>
     </nav>
     <a class="btn btn-small" href="#stories">Shop</a>
@@ -354,6 +372,32 @@ dialog.peek::backdrop { background:rgba(38,32,58,.72); }
           <div class="buy"><span class="price">$14.99<small>$19.98</small></span><a class="btn payhip-buy-button" data-theme="none" data-product="Xyznq" href="https://payhip.com/b/Xyznq">Get the bundle</a></div>
         </div>
       </article>
+    </div>
+  </section>
+
+  <section id="lullabies">
+    <div class="wrap">
+      <div class="lull">
+        <img src="assets/box-lullabies.webp" alt="Snowy Night Lullabies: 5 gentle winter songs for bedtime, with Puddle, Pip and Beezy asleep by the window" width="1000" height="1000" loading="lazy">
+        <div>
+          <p class="eyebrow">Rainy Day Lullabies</p>
+          <h2>Snowy Night Lullabies</h2>
+          <p class="lead">Five gentle winter songs for bedtime, sung softly over music box, piano and strings. Press play, dim the lights and let the snow fall.</p>
+          <div class="tracks">
+            <div class="track" data-src="assets/audio/lull-1.mp3"><button type="button" aria-label="Play a short clip of Softly, Softly Falls the Snow"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>1. Softly, Softly Falls the Snow</b><small>Snow on the rooftops, row by row</small></span><time>0:12</time><span class="bar"><i></i></span></div>
+            <div class="track" data-src="assets/audio/lull-2.mp3"><button type="button" aria-label="Play a short clip of Little Star in the Window"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>2. Little Star in the Window</b><small>A star that shines for every sleepy eye</small></span><time>0:12</time><span class="bar"><i></i></span></div>
+            <div class="track" data-src="assets/audio/lull-3.mp3"><button type="button" aria-label="Play a short clip of Counting Snowflakes"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>3. Counting Snowflakes</b><small>One, two, three… counting softly to sleep</small></span><time>0:12</time><span class="bar"><i></i></span></div>
+            <div class="track" data-src="assets/audio/lull-4.mp3"><button type="button" aria-label="Play a short clip of Warm and Cozy"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>4. Warm and Cozy</b><small>Blankets, cocoa and toes so warm</small></span><time>0:12</time><span class="bar"><i></i></span></div>
+            <div class="track" data-src="assets/audio/lull-5.mp3"><button type="button" aria-label="Play a short clip of Moon Over the Snowy Hill"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>5. Moon Over the Snowy Hill</b><small>The moon keeps watch all night</small></span><time>0:12</time><span class="bar"><i></i></span></div>
+          </div>
+          <ul class="inc">
+            <li>5 sung lullabies + 5 instrumentals</li>
+            <li>A 12-minute Sleepy Snow Medley</li>
+            <li>Printable lyric sheets · US Letter and A4</li>
+          </ul>
+          <div class="buy"><span class="price">$6.99</span><a class="btn sun payhip-buy-button" data-theme="none" data-product="8bMzv" href="https://payhip.com/b/8bMzv">Buy now</a></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -571,7 +615,7 @@ dialog.peek::backdrop { background:rgba(38,32,58,.72); }
   <div class="wrap">
     <img src="assets/rainy-day-friends-logo.png" alt="Rainy Day Friends" width="1386" height="297">
     <nav aria-label="Footer">
-      <a href="#stories">Bedtime stories</a><a href="#books">Coloring books</a><a href="#try">Try a page</a><a href="#sampler">Free sampler</a><a href="https://payhip.com/RainyDayColors">Shop on Payhip</a>
+      <a href="#stories">Bedtime stories</a><a href="#lullabies">Lullabies</a><a href="#books">Coloring books</a><a href="#try">Try a page</a><a href="#sampler">Free sampler</a><a href="https://payhip.com/RainyDayColors">Shop on Payhip</a>
     </nav>
     <small>© 2026 Rainy Day Friends · Made with love in Iceland · Coloring books sold as instant PDF downloads through Payhip.</small>
   </div>
