@@ -165,7 +165,7 @@ section { padding-block:clamp(64px, 9vw, 112px); }
 .buy .btn { white-space:nowrap; }
 .bundle .price small { font-size:15px; color:var(--muted); font-weight:600; margin-left:6px; text-decoration:line-through; }
 .stories { background:var(--paper); }
-.stories .products { grid-template-columns:repeat(2, 1fr); max-width:940px; margin-left:auto; margin-right:auto; }
+.stories .products { grid-template-columns:repeat(3, 1fr); max-width:1100px; margin-left:auto; margin-right:auto; }
 .stories .bundle { max-width:940px; margin-left:auto; margin-right:auto; }
 .stories .bundle img { height:auto; align-self:center; }
 .lvw { background:#5B7FA6; } .lvx { background:#694B8D; }
@@ -355,6 +355,21 @@ dialog.peek::backdrop { background:rgba(38,32,58,.72); }
               <div class="track" data-src="assets/audio/lullaby-clip.mp3"><button type="button" aria-label="Play the lullaby"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>Lullaby</b><small>Softly, Softly Falls the Snow</small></span><time>0:12</time><span class="bar"><i></i></span></div>
             </div>
             <div class="buy"><span class="price">$9.99</span><a class="btn btn-small payhip-buy-button" data-theme="none" data-product="1JxpT" href="https://payhip.com/b/1JxpT">Buy now</a></div>
+          </div>
+        </article>
+        <article class="product">
+          <img src="assets/box-snowflake.webp" alt="The Snowflake Counting Night winter Bedtime Box: storybook, read-aloud, lullaby and coloring pages" width="1000" height="1000" loading="lazy">
+          <div class="product-body">
+            <p class="pill lvw">Bedtime Box · Calming</p>
+            <h3>The Snowflake Counting Night</h3>
+            <p class="meta">Ages 3–7 · storybook, read-aloud, lullaby &amp; 10 coloring pages</p>
+            <p>Mosi can’t sleep… so Mila teaches him to count snowflakes, one slow breath at a time.</p>
+            <div class="try"><button type="button" data-peek="snowflake"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 8s2.6-5 7-5 7 5 7 5-2.6 5-7 5-7-5-7-5z"/><circle cx="8" cy="8" r="2.2"/></svg> Peek inside</button><button type="button" class="listen-btn" aria-expanded="false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 10V8a5.5 5.5 0 0 1 11 0v2"/><rect x="1.5" y="9.5" width="3" height="4.5" rx="1.2"/><rect x="11.5" y="9.5" width="3" height="4.5" rx="1.2"/></svg> Listen</button></div>
+            <div class="listen-panel">
+              <div class="track" data-src="assets/audio/snowflake-story-clip.mp3"><button type="button" aria-label="Play the read-aloud"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>Read-aloud</b><small>How the story begins</small></span><time>0:11</time><span class="bar"><i></i></span></div>
+              <div class="track" data-src="assets/audio/lullaby-clip.mp3"><button type="button" aria-label="Play the lullaby"><svg viewBox="0 0 16 16" fill="currentColor"><path d="M4 2.5v11l9-5.5z"/></svg></button><span><b>Lullaby</b><small>Softly, Softly Falls the Snow</small></span><time>0:12</time><span class="bar"><i></i></span></div>
+            </div>
+            <div class="buy"><span class="price">$9.99</span><a class="btn btn-small payhip-buy-button" data-theme="none" data-product="O4XzC" href="https://payhip.com/b/O4XzC">Buy now</a></div>
           </div>
         </article>
       </div>
@@ -748,7 +763,8 @@ dialog.peek::backdrop { background:rgba(38,32,58,.72); }
 (function(){
   var SETS={
     snowy:{title:"Snowy’s First Christmas Eve",pages:[["snowy-1","The storybook cover"],["snowy-2","Inside the storybook"],["snowy-3","Inside the storybook"],["snowy-4","Inside the storybook"],["snowy-c1","A coloring page from the story"],["snowy-c2","A coloring page from the story"]]},
-    star:{title:"The Star in the Snow",pages:[["star-1","The storybook cover"],["star-2","Inside the storybook"],["star-3","Inside the storybook"],["star-4","Inside the storybook"],["star-c1","A coloring page from the story"],["star-c2","A coloring page from the story"]]}
+    star:{title:"The Star in the Snow",pages:[["star-1","The storybook cover"],["star-2","Inside the storybook"],["star-3","Inside the storybook"],["star-4","Inside the storybook"],["star-c1","A coloring page from the story"],["star-c2","A coloring page from the story"]]},
+    snowflake:{title:"The Snowflake Counting Night",pages:[["snowflake-1","The storybook cover"],["snowflake-2","Inside the storybook"],["snowflake-3","Inside the storybook"],["snowflake-4","Inside the storybook"],["snowflake-c1","A coloring page from the story"],["snowflake-c2","A coloring page from the story"]]}
   };
   var dlg=document.getElementById('peek'), img=document.getElementById('peek-img'), cap=document.getElementById('peek-cap'), dots=document.getElementById('peek-dots'), ttl=document.getElementById('peek-title');
   var set=null, i=0, x0=null;
